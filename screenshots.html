@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROJECT SATURN</title>
+<title>PROJECT SATURN - SCREENSHOTS</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -23,7 +23,6 @@ body {
   padding: 26px 12px 60px;
 }
 
-/* ============ SITE FRAME ============ */
 .site-frame{
   max-width:800px;
   margin:0 auto;
@@ -32,7 +31,6 @@ body {
   box-shadow:0 0 0 3px #7c1626, 0 10px 40px rgba(0,0,0,.8);
 }
 
-/* ============ TOP BAR ============ */
 .top-bar {
   display: flex;
   align-items: center;
@@ -51,7 +49,6 @@ body {
   color: #2a2d31;
   font-weight: bold;
 }
-/* ============ LAYOUT ============ */
 .layout{ display:flex; }
 
 .sidebar{
@@ -70,10 +67,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.bubble-logo img {
-  width: 100%;
-}
+.bubble-logo img { width: 100%; }
 
 .nav-pills{ list-style:none; display:flex; flex-direction:column; gap:6px; }
 .nav-pills li a{
@@ -103,7 +97,6 @@ body {
 }
 .status-box b{ color:#ffdf5e; display:block; font-size:10px; margin-bottom:2px; }
 
-/* ---- main content ---- */
 .main{ flex:1; min-width:0; }
 .section{
   padding:22px 20px;
@@ -116,22 +109,6 @@ body {
 }
 .section p{ font-size:12px; line-height:1.6; color:#e7cfd2; max-width:60ch; margin-bottom:10px; }
 
-/* about */
-.about-row{ display:flex; gap:16px; align-items:flex-start; }
-.about-row img{ flex:0 0 90px; width:90px; }
-
-/* cast grid */
-.cast-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.cast-card {
-  background: #000000;
-  border: 2px solid #7c1626;
-  padding: 8px;
-  text-align: center;
-}
-.cast-card img{ width:100%; height:80px; object-fit:contain; }
-.cast-card .name{ font-size:12px; font-weight:bold; color:#ffdf5e; margin-top:4px; }
-
-/* screenshots */
 .shot-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
 .shot-tile {
   background: #000000;
@@ -142,65 +119,6 @@ body {
   justify-content: center;
 }
 .shot-tile img{ width:82%; height:82%; object-fit:contain; }
-
-/* download */
-.dl-btn{
-  display:inline-block;
-  font-weight:bold; font-size:14px; color:#fff;
-  background:linear-gradient(180deg,#e04b4b,#8b0000);
-  border:1px solid #000; border-radius:6px;
-  padding:10px 22px; text-decoration:none;
-  box-shadow:0 3px 0 #400, 0 6px 12px rgba(0,0,0,.5);
-}
-.req-list{ font-size:11px; color:#c9a0a0; margin-top:12px; line-height:1.6; }
-
-.link-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-.link-card{
-  background:#000000;
-  border:2px solid #7c1626;
-  padding:12px;
-  text-decoration:none;
-  color:#e7cfd2;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.link-card:hover{ filter:brightness(1.08); }
-.link-card .thumb{
-  width:42px;
-  height:42px;
-  flex:0 0 42px;
-  background:transparent;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.link-card .thumb img{ width:100%; height:100%; object-fit:cover; }
-.link-card h3{
-  font-size:13px;
-  color:#ffdf5e;
-  margin-bottom:6px;
-  text-transform:uppercase;
-}
-.link-card p{ font-size:11px; line-height:1.5; margin:0; }
-
-/* ============ FOOTER ============ */
-.hidden-egg-link {
-  display: inline-block;
-  margin: 6px 0 0;
-  padding: 0;
-  font-size: 7px;
-  font-weight: normal;
-  color: rgba(255,255,255,0.12);
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  opacity: 0.25;
-}
-.hidden-egg-link:hover {
-  opacity: 0.45;
-  color: rgba(255,223,94,0.4);
-}
 
 .site-footer{
   border-top:2px solid #000;
@@ -216,15 +134,12 @@ body {
   .nav-pills{ flex-direction:row; flex-wrap:wrap; justify-content:center; }
   .status-box{ max-width:280px; margin-left:auto; margin-right:auto; }
   .top-bar{ flex-direction:column; align-items:flex-start; gap:4px; }
-  .about-row{ flex-direction:column; align-items:center; text-align:center; }
-  .cast-grid,.shot-grid{ grid-template-columns:repeat(2,1fr); }
+  .shot-grid{ grid-template-columns:repeat(2,1fr); }
 }
 </style>
 </head>
 <body>
-
 <div class="site-frame">
-
   <div class="top-bar">
     <div class="logo-wrap"><img src="./psaturn-logo.png" alt="Project Saturn"></div>
     <span class="updated-txt">LAST UPDATED: JULY 30, 2026</span>
@@ -233,13 +148,12 @@ body {
   <div class="layout">
     <div class="sidebar">
       <div class="bubble-logo"><img src="./psaturn-logo.png" alt="logo"></div>
-      <a class="hidden-egg-link" href="./egg.html">a room in between...</a>
 
       <ul class="nav-pills">
-        <li class="current"><a href="./index.html">ABOUT</a></li>
+        <li><a href="./index.html">ABOUT</a></li>
         <li><a href="./story.html">STORY</a></li>
         <li><a href="./cast.html">CAST</a></li>
-        <li><a href="./screenshots.html">SCREENSHOTS</a></li>
+        <li class="current"><a href="./screenshots.html">SCREENSHOTS</a></li>
         <li><a href="./download.html">DOWNLOAD</a></li>
         <li><a href="./credits.html">CREDITS</a></li>
       </ul>
@@ -253,65 +167,20 @@ body {
     </div>
 
     <div class="main">
-
-      <div class="section" id="about">
-        <h2>About the Game</h2>
-        <div class="about-row">
-          <img src="./sonic-art.png" alt="">
-          <p>Project Saturn is a fan-made tribute that reimagines a classic Sonic-inspired adventure with a fresh visual style, original characters, and a bold retro feel.</p>
+      <div class="section" id="screenshots">
+        <h2>Screenshots</h2>
+        <div class="shot-grid">
+          <div class="shot-tile"><img src="./sonic-tails-02.png" alt="Screenshot 1"></div>
+          <div class="shot-tile"><img src="./sonic-tails-rings.png" alt="Screenshot 2"></div>
+          <div class="shot-tile"><img src="./sonic-tails-piggyback.png" alt="Screenshot 3"></div>
         </div>
       </div>
-
-      <div class="section" id="explore">
-        <h2>Explore the Pages</h2>
-        <p>Browse the site to meet the characters, view screenshots, download the latest build, and see the people behind the project.</p>
-        <div class="link-grid">
-          <a class="link-card" href="./cast.html">
-            <span class="thumb"><img src="./sonic-run.png" alt=""></span>
-            <span>
-              <h3>Meet the Cast</h3>
-              <p>Learn about the cast and the world they inhabit.</p>
-            </span>
-          </a>
-          <a class="link-card" href="./screenshots.html">
-            <span class="thumb"><img src="./sonic-tails-02.png" alt=""></span>
-            <span>
-              <h3>Screenshots</h3>
-              <p>See key visuals and development snapshots.</p>
-            </span>
-          </a>
-          <a class="link-card" href="./download.html">
-            <span class="thumb"><img src="./sonic-tails-rings.png" alt=""></span>
-            <span>
-              <h3>Download</h3>
-              <p>Grab the latest demo and follow progress.</p>
-            </span>
-          </a>
-          <a class="link-card" href="./credits.html">
-            <span class="thumb"><img src="./sonic-tails-piggyback.png" alt=""></span>
-            <span>
-              <h3>Credits</h3>
-              <p>Meet the team and contributors behind the project.</p>
-            </span>
-          </a>
-        </div>
-      </div>
-
     </div>
   </div>
 
   <div class="site-footer">
     <span>© 1996 Team Orbit - This is a fan project. We are not affiliated with SEGA or Sonic Team.</span>
   </div>
-
 </div>
-<script>
-  if (localStorage.getItem('eggCollected') === 'true') {
-    const link = document.querySelector('.hidden-egg-link');
-    if (link) {
-      link.style.display = 'none';
-    }
-  }
-</script>
 </body>
 </html>

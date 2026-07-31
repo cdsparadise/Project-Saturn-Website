@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>* Well, there's a man here.</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+  img {
+    max-width: 100vw;
+    max-height: 100vh;
+    display: block;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <img id="egg-tree" src="./egg.gif" alt="Egg" />
+  <audio autoplay loop>
+    <source src="./eggroom.mp3" type="audio/mpeg" />
+  </audio>
+  <script>
+    const titles = [
+      '* He realizes that you arent where you should.',
+      '* But he is not angry, he looks at you with a smile.',
+      '* Maybe he is happy to see you, maybe he is sad, maybe he is confused.',
+      '* Who is really to say?',
+      '* It seems like theres nothing else here for you.',
+      '* You have received the Egg.'
+    ];
+    let titleIndex = 0;
+    const tree = document.getElementById('egg-tree');
+    tree.addEventListener('click', () => {
+      if (titleIndex < titles.length) {
+        document.title = titles[titleIndex];
+        titleIndex += 1;
+        if (titleIndex === titles.length) {
+          localStorage.setItem('eggCollected', 'true');
+        }
+      } else {
+        localStorage.setItem('eggCollected', 'true');
+        window.location.href = './index.html';
+      }
+    });
+  </script>
+</body>
+</html>

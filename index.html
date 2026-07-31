@@ -185,6 +185,23 @@ body {
 .link-card p{ font-size:11px; line-height:1.5; margin:0; }
 
 /* ============ FOOTER ============ */
+.hidden-egg-link {
+  display: inline-block;
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 7px;
+  font-weight: normal;
+  color: rgba(255,255,255,0.12);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  opacity: 0.25;
+}
+.hidden-egg-link:hover {
+  opacity: 0.45;
+  color: rgba(255,223,94,0.4);
+}
+
 .site-footer{
   border-top:2px solid #000;
   background:#0f0204;
@@ -214,9 +231,9 @@ body {
   </div>
 
   <div class="layout">
-
     <div class="sidebar">
       <div class="bubble-logo"><img src="./psaturn-logo.png" alt="logo"></div>
+      <a class="hidden-egg-link" href="./egg.html">a room in between...</a>
 
       <ul class="nav-pills">
         <li class="current"><a href="./index.html">ABOUT</a></li>
@@ -241,40 +258,40 @@ body {
         <h2>About the Game</h2>
         <div class="about-row">
           <img src="./sonic-art.png" alt="">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Project Saturn is a fan-made tribute that reimagines a classic Sonic-inspired adventure with a fresh visual style, original characters, and a bold retro feel.</p>
         </div>
       </div>
 
       <div class="section" id="explore">
         <h2>Explore the Pages</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Browse the site to meet the characters, view screenshots, download the latest build, and see the people behind the project.</p>
         <div class="link-grid">
           <a class="link-card" href="./cast.html">
             <span class="thumb"><img src="./sonic-run.png" alt=""></span>
             <span>
               <h3>Meet the Cast</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Learn about the cast and the world they inhabit.</p>
             </span>
           </a>
           <a class="link-card" href="./screenshots.html">
             <span class="thumb"><img src="./sonic-tails-02.png" alt=""></span>
             <span>
               <h3>Screenshots</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>See key visuals and development snapshots.</p>
             </span>
           </a>
           <a class="link-card" href="./download.html">
             <span class="thumb"><img src="./sonic-tails-rings.png" alt=""></span>
             <span>
               <h3>Download</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Grab the latest demo and follow progress.</p>
             </span>
           </a>
           <a class="link-card" href="./credits.html">
             <span class="thumb"><img src="./sonic-tails-piggyback.png" alt=""></span>
             <span>
               <h3>Credits</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Meet the team and contributors behind the project.</p>
             </span>
           </a>
         </div>
@@ -288,6 +305,13 @@ body {
   </div>
 
 </div>
-
+<script>
+  if (localStorage.getItem('eggCollected') === 'true') {
+    const link = document.querySelector('.hidden-egg-link');
+    if (link) {
+      link.style.display = 'none';
+    }
+  }
+</script>
 </body>
 </html>

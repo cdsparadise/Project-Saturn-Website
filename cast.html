@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT SATURN - CAST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: 'MS PGothic Custom';
+            src: url('./ms-pgothic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'MS PGothic Custom', "MS PGothic", Verdana, Arial, sans-serif;
+            background-color: #1a0000;
+            background-image: url('./checkerboard.png');
+            color: #fff;
+            padding: 26px 12px 60px;
+        }
+
+        .site-frame {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #3a0a10, #210408 40%, #1a0306);
+            border: 2px solid #000;
+            box-shadow: 0 0 0 3px #7c1626, 0 10px 40px rgba(0, 0, 0, .8);
+        }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 10px 16px;
+            background: url('./image_830c17.png') center/cover no-repeat;
+            border-bottom: 3px solid #000;
+        }
+
+        .top-bar .logo-wrap img {
+            height: 34px;
+            display: block;
+        }
+
+        .updated-txt {
+            font-size: 10px;
+            color: #2a2d31;
+            font-weight: bold;
+        }
+
+        .layout {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 150px;
+            flex: 0 0 150px;
+            background: linear-gradient(180deg, #2a0509, #160203);
+            border-right: 2px solid #000;
+            padding: 16px 10px;
+            text-align: center;
+        }
+
+        .bubble-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 0px;
+            background: url('./sega-saturn.png') center/contain no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bubble-logo img {
+            width: 100%;
+        }
+
+        .nav-pills {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .nav-pills li a {
+            display: block;
+            background: linear-gradient(180deg, #6f8fe8, #1c3f8f 55%, #12275c);
+            color: #fff;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 7px 4px;
+            border-radius: 12px;
+            border: 1px solid #000;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 2px 3px rgba(0, 0, 0, .5);
+        }
+
+        .nav-pills li a:hover {
+            filter: brightness(1.15);
+        }
+
+        .nav-pills li.current a {
+            background: linear-gradient(180deg, #ff8a5c, #c8102e 55%, #6e0a17);
+        }
+
+        .status-box {
+            margin-top: 16px;
+            background: #000000;
+            border: 2px solid #5a1520;
+            padding: 8px 6px;
+            font-size: 9px;
+            line-height: 1.5;
+            text-align: left;
+            color: #c9a0a0;
+        }
+
+        .status-box b {
+            color: #ffdf5e;
+            display: block;
+            font-size: 10px;
+            margin-bottom: 2px;
+        }
+
+        .main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .section {
+            padding: 22px 20px;
+            border-bottom: 1px solid #5a1520;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            color: #ffdf5e;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        .section p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #e7cfd2;
+            max-width: 60ch;
+            margin-bottom: 10px;
+        }
+
+        .cast-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .cast-card {
+            background: #000000;
+            border: 2px solid #7c1626;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .cast-card img {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .cast-card .name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffdf5e;
+            margin-top: 4px;
+        }
+
+        .cast-card .desc {
+            font-size: 10px;
+            line-height: 1.4;
+            color: #e7cfd2;
+            margin-top: 6px;
+        }
+
+        .site-footer {
+            border-top: 2px solid #000;
+            background: #0f0204;
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+            font-size: 9px;
+            color: #a06a6a;
+        }
+
+        @media(max-width:620px) {
+            .layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                flex: none;
+                border-right: none;
+                border-bottom: 2px solid #000;
+            }
+
+            .nav-pills {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .status-box {
+                max-width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .cast-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-frame">
+        <div class="top-bar">
+            <div class="logo-wrap"><img src="./psaturn-logo.png" alt="Project Saturn"></div>
+            <span class="updated-txt">LAST UPDATED: JULY 30, 2026</span>
+        </div>
+
+        <div class="layout">
+            <div class="sidebar">
+                <div class="bubble-logo"><img src="./psaturn-logo.png" alt="logo"></div>
+
+                <ul class="nav-pills">
+                    <li><a href="./index.html">ABOUT</a></li>
+                    <li><a href="./story.html">STORY</a></li>
+                    <li class="current"><a href="./cast.html">CAST</a></li>
+                    <li><a href="./screenshots.html">SCREENSHOTS</a></li>
+                    <li><a href="./download.html">DOWNLOAD</a></li>
+                    <li><a href="./credits.html">CREDITS</a></li>
+                </ul>
+
+                <div class="status-box">
+                    <b>STATUS</b>
+                    In development<br>
+                    <b style="margin-top:6px;">PLATFORM</b>
+                    PC (fan-made)
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="section" id="cast">
+                    <h2>Meet the Cast</h2>
+                    <div class="cast-grid">
+                        <div class="cast-card">
+                            <img src="./character_renders/sonic.jpg" alt="Sonic">
+                            <div class="name">Sonic The Hedgehog</div>
+                            <div class="desc">The fastest thing alive! Sonic is a blue hedgehog that loves his friends and adventure. He is known for his speed and heroic nature, always ready to save the day from Dr. Eggman.</div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="./character_renders/tails.jpg" alt="Tails">
+                            <div class="name">Miles "Tails" Prower</div>
+                            <div class="desc">Tails is a two-tailed fox who is Sonic's best friend and sidekick. He is a genius inventor and mechanic, often creating gadgets and vehicles to help Sonic in his adventures. He loves mints, too!</div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="./character_renders/amy.jpg" alt="Amy">
+                            <div class="name">Amy Rose</div>
+                            <div class="desc">Amy Rose is a pink hedgehog who loves Sonic, with her mighty Piko-Piko Hammer, she is a fierce competitor and loyal friend!</div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="./character_renders/knuck.jpg" alt="Knuckles">
+                            <div class="name">Knuckles</div>
+                            <div class="desc">Placeholder description for Knuckles. Add more details later.</div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="./character_renders/eggman.jpg" alt="Eggman">
+                            <div class="name">Doctor Eggman</div>
+                            <div class="desc">Placeholder description for Eggman. Add more details later.</div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="./character_renders/msonic.jpg" alt="Metal Sonic">
+                            <div class="name">Metal Sonic</div>
+                            <div class="desc">Placeholder description for Metal Sonic. Add more details later.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer">
+            <span>© 1996 Team Orbit - This is a fan project. We are not affiliated with SEGA or Sonic Team.</span>
+        </div>
+    </div>
+</body>
+
+</html>

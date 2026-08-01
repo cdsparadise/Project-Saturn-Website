@@ -90,6 +90,19 @@ body {
 .section h2{ font-size:18px; color:#ffdf5e; margin-bottom:10px; text-shadow:1px 1px 0 #000; }
 .section p{ font-size:12px; line-height:1.6; color:#e7cfd2; max-width:60ch; margin-bottom:10px; }
 
+.story-manual{ display:flex; gap:10px; align-items:stretch; background:linear-gradient(180deg,#220406,#120203); border:2px solid #7c1626; padding:14px; }
+.story-image{ width:110px; flex:0 0 110px; display:flex; flex-direction:column; gap:10px; }
+.story-image .art{ flex:1; border:1px solid #5a1520; background:linear-gradient(180deg,#2d090c,#100203); background-size:cover; background-position:center; position:relative; min-height:120px; }
+.story-image .art:before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.75)); }
+.story-image .art span{ position:relative; z-index:1; display:block; padding:8px; color:#ffdf5e; font-size:10px; text-transform:uppercase; letter-spacing:1px; text-align:center; }
+.story-image .art.left{ background-image:url('./character_renders/sonic.jpg'); }
+.story-image .art.right{ background-image:url('./character_renders/eggman.jpg'); }
+.story-content{ flex:1; padding:10px 14px; display:flex; flex-direction:column; justify-content:space-between; background:rgba(0,0,0,.14); border:1px solid #5a1520; }
+.story-content h3{ color:#ffdf5e; font-size:15px; margin-bottom:12px; text-transform:uppercase; letter-spacing:1px; }
+.story-content p{ margin-bottom:10px; }
+.story-footer{ margin-top:10px; border-top:1px solid #5a1520; padding-top:10px; }
+.story-quote{ margin:10px 0; padding:10px 12px; border-left:3px solid #7c1626; color:#ffdf5e; font-style:italic; background:rgba(255,223,94,.06); }
+
 .site-footer{
   border-top:2px solid #000;
   background:#0f0204;
@@ -104,6 +117,9 @@ body {
   .nav-pills{ flex-direction:row; flex-wrap:wrap; justify-content:center; }
   .status-box{ max-width:280px; margin-left:auto; margin-right:auto; }
   .top-bar{ flex-direction:column; align-items:flex-start; gap:4px; }
+  .story-manual{ flex-direction:column; }
+  .story-image{ width:100%; flex:none; flex-direction:row; }
+  .story-image .art{ height:90px; flex:1; }
 }
 </style>
 </head>
@@ -136,10 +152,24 @@ body {
     <div class="main">
       <div class="section" id="story">
         <h2>Story</h2>
-        <div style="text-align:center;">
-          <img src="./sonicart.webp" alt="construction" style="max-width:320px;width:80%;height:auto;display:block;margin:0 auto 12px;">
-          <h3 style="color:#ffdf5e;margin:8px 0 6px;text-align:center;">This page is under construction! Come back later!</h3>
-          <p style="max-width:60ch;margin:0 auto;text-align:center;">The programmer has a nap. Hold out! Programmer!</p>
+        <div class="story-manual">
+          <div class="story-image">
+            <div class="art left"><span>Illustration</span></div>
+            <div class="art right"><span>Illustration</span></div>
+          </div>
+
+          <div class="story-content">
+            <div>
+              <h3>Project Saturn Story</h3>
+              <p>Placeholder text for the opening of the narrative. This copy introduces the setting, tone, and mood of the adventure without breaking the manual-like presentation.</p>
+              <p>The story text flows within one continuous box, framed by side artwork panels that give the page a more polished booklet appearance.</p>
+              <div class="story-quote">"A mysterious energy has begun to pulse through the world, and only a few heroes sense the coming storm."</div>
+            </div>
+            <div class="story-footer">
+              <p>More placeholder text continues here to maintain the layout and visual balance. The official story can be added later while keeping this structure intact.</p>
+              <p>Two side images and a long central text column now form the main story panel, which better matches the layout style you requested.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

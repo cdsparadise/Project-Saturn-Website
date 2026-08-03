@@ -86,6 +86,7 @@
 
     .bubble-logo img {
       width: 100%;
+      filter: brightness(0) invert(1);
     }
 
     .nav-pills {
@@ -183,6 +184,168 @@
       line-height: 1.6;
     }
 
+    .release-callout {
+      margin-top: 6px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .release-pill {
+      display: inline-block;
+      background: #471618;
+      border: 1px solid #000;
+      color: #ffd66f;
+      padding: 6px 10px;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
+    }
+
+    .release-hero {
+      flex: 1;
+      font-size: 16px;
+      color: #f2d48d;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+      border-bottom: 1px dashed rgba(255,255,255,.12);
+      padding-bottom: 4px;
+    }
+
+    .release-panel {
+      margin-top: 16px;
+      background: #190304;
+      border: 2px solid #5c121d;
+      padding: 16px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .release-panel h3 {
+      font-size: 14px;
+      color: #ffdd71;
+      margin-bottom: 8px;
+    }
+
+    .release-panel p {
+      margin-bottom: 10px;
+      color: #d9c1c5;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 8px 12px;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .feature-list li {
+      font-size: 11px;
+      color: #c9a0a0;
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ffb55f;
+    }
+
+    .countdown-box {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(64px, 1fr));
+      gap: 10px;
+      justify-items: center;
+      background: linear-gradient(180deg, #23050b, #140205);
+      border: 2px solid #401114;
+      padding: 12px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 0 0 2px rgba(0,0,0,.4);
+    }
+
+    .countdown-card {
+      width: 100%;
+      background: #2d0810;
+      border: 1px solid #000;
+      border-radius: 4px;
+      padding: 10px 6px;
+      text-align: center;
+      box-shadow: inset 0 -2px 0 rgba(255,255,255,.08), 0 2px 0 rgba(0,0,0,.35);
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #c7a49a;
+      margin-bottom: 4px;
+    }
+
+    .countdown-value {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: .1em;
+      color: #ffcd4e;
+      text-shadow: 0 1px 0 rgba(0,0,0,.5);
+      font-family: 'MS PGothic Custom', "MS PGothic", Verdana, Arial, sans-serif;
+    }
+
+    .countdown-note {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #dfc4c6;
+      text-align: center;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: .02em;
+      text-shadow: 0 1px 0 rgba(0,0,0,.3);
+    }
+
+    .countdown-note .blink {
+      display: inline-block;
+      color: #ff9d4d;
+      text-shadow: 0 0 2px rgba(255,157,77,.9);
+      animation: retro-blink 1.2s steps(2, start) infinite;
+    }
+
+    .status-panel {
+      margin-top: 16px;
+      background: #120103;
+      border: 1px solid #3d0f14;
+      padding: 14px 12px;
+      color: #c8b2b6;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .status-panel p {
+      margin-top: 8px;
+    }
+
+    .status-pill {
+      display: inline-block;
+      background: #2f0710;
+      border: 1px solid #000;
+      color: #fedc88;
+      padding: 4px 8px;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    @keyframes retro-blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0.25; }
+    }
+
     .site-footer {
       border-top: 2px solid #000;
       background: #0f0204;
@@ -258,9 +421,43 @@
 
       <div class="main">
         <div class="section" id="download">
-          <h2>Under Construction</h2>
-          <p>This section is currently under construction as the download page is being prepared. We’re polishing the files and updates before making them available.</p>
-          <p>Please check back soon for the official demo release and any support materials.</p>
+          <h2>Download Preview</h2>
+          <div class="release-callout">
+            <span class="release-pill">DEMO LAUNCH</span>
+            <span class="release-hero">Anticipate the release with the live timer below.</span>
+          </div>
+
+          <div class="release-panel">
+            <h3>Locked and loaded for August 10th</h3>
+            <p>Project Saturn is being readied for the drop. Download assets are being assembled and tested now: the link will go live at 12PM EST!</p>
+          </div>
+
+          <div class="countdown-box" id="countdown-box">
+            <div class="countdown-card">
+              <div class="countdown-label">Days</div>
+              <div class="countdown-value" id="countdown-days">00</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-label">Hours</div>
+              <div class="countdown-value" id="countdown-hours">00</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-label">Minutes</div>
+              <div class="countdown-value" id="countdown-minutes">00</div>
+            </div>
+            <div class="countdown-card">
+              <div class="countdown-label">Seconds</div>
+              <div class="countdown-value" id="countdown-seconds">00</div>
+            </div>
+          </div>
+
+          <div class="countdown-note">Countdown to the demo drop: August 10th, 12PM EST. <span class="blink">COMING SOON</span></div>
+
+          <div class="status-panel">
+            <span class="status-pill">STATUS: ASSETS FINALIZING</span>
+            <p>The download link will activate once the timer reaches zero. In the meantime, the demo is being polished to make sure launch day feels right.</p>
+          </div>
+
           <div class="req-list">
             Status: Preparing download assets · ETA: Soon
           </div>
@@ -272,6 +469,47 @@
       <span>1996 Team Orbit - This is a fan project. We are not affiliated with SEGA or Sonic Team.</span>
     </div>
   </div>
+
+  <script>
+    (function() {
+      const targetUtc = Date.UTC(2026, 7, 10, 16, 0, 0);
+      const dayEl = document.getElementById('countdown-days');
+      const hourEl = document.getElementById('countdown-hours');
+      const minuteEl = document.getElementById('countdown-minutes');
+      const secondEl = document.getElementById('countdown-seconds');
+
+      function pad(value) {
+        return String(value).padStart(2, '0');
+      }
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = targetUtc - now.getTime();
+
+        if (diff <= 0) {
+          dayEl.textContent = '00';
+          hourEl.textContent = '00';
+          minuteEl.textContent = '00';
+          secondEl.textContent = '00';
+          return;
+        }
+
+        const seconds = Math.floor(diff / 1000);
+        const days = Math.floor(seconds / 86400);
+        const hours = Math.floor((seconds % 86400) / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+
+        dayEl.textContent = pad(days);
+        hourEl.textContent = pad(hours);
+        minuteEl.textContent = pad(minutes);
+        secondEl.textContent = pad(secs);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 
 </html>
